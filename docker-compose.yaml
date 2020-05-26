@@ -4,12 +4,15 @@ services:
     build: ./mysql-consumer
     depends_on:
     - mysql-server
+    restart: unless-stopped
   mysql-server:
     build: ./mysql-server
     environment:
     - MYSQL_ROOT_PASSWORD=root
+    restart: unless-stopped
   mongodb-server:
     image: mongo:4.0
+    restart: unless-stopped
   mysql-cli:
     build: ./mysql-cli
     depends_on:
