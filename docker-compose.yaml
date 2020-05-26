@@ -2,8 +2,6 @@ version: "3.5"
 services:
   mysql-consumer:
     build: ./mysql-consumer
-    volumes:
-    - ./mysql-consumer/app:/var/app
     depends_on:
     - mysql-server
   mysql-server:
@@ -19,3 +17,5 @@ services:
     command: [/bin/false]
   mongodb-fetcher:
     build: ./mongodb-fetcher
+    depends_on:
+    - mongodb-server
