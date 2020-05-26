@@ -1,0 +1,21 @@
+version: "3.5"
+services:
+  mysql-consumer:
+    build: ./mysql-consumer
+    volumes:
+    - ./mysql-consumer/app:/var/app
+    depends_on:
+    - mysql-server
+  mysql-server:
+    build: ./mysql-server
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+  mongodb-server:
+    image: mongo:4.0
+  mysql-cli:
+    build: ./mysql-cli
+    depends_on:
+    - mysql-server
+    command: [/bin/false]
+  mongodb-fetcher:
+    build: ./mongodb-fetcher
