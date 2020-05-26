@@ -5,16 +5,24 @@ Using the library go-mysql, I've setup a proof of concept environment where chan
 # Usage
 
 * Start servers:
-`docker-compose up`
+```
+docker-compose up
+```
 
 * List records from MongoDB collection (should return 0 records)
-`docker-compose run mongodb-fetcher`
+```
+docker-compose run mongodb-fetcher
+```
 
 * Create MySQL table and insert 3 records
-`docker-compose run mysql-cli init`
+```
+docker-compose run mysql-cli init
+```
 
 * List records from MongoDB collection (should return 3 records)
-`docker-compose run mongodb-fetcher`
+```
+docker-compose run mongodb-fetcher
+```
 
 * Insert, update and delete records from MySQL table
 ```
@@ -26,4 +34,6 @@ docker-compose run mysql-cli 'DELETE FROM mytable WHERE value="Record1"'
 ```
 
 * List records from MongoDB collection (should new set of records)
-`docker-compose run mongodb-fetcher`
+```
+docker-compose run mongodb-fetcher
+```
