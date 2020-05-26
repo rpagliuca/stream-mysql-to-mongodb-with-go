@@ -14,13 +14,13 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-	log.Println(session)
 	collection := session.DB("mymongodb").C("mymongocollection")
 	rows := []interface{}{}
 	err = collection.Find(bson.M{}).All(&rows)
 	if err != nil {
 		log.Println(err)
 	}
+	fmt.Println("Results from mymongodb.mymongocollection:")
 	for _, row := range rows {
 		fmt.Println(row)
 	}
