@@ -1,4 +1,4 @@
-while ! (echo "SHOW DATABASES" | mysql -uroot -proot -hmysql-server); do
+while ! (echo "SHOW DATABASES" | mysql -uroot -proot -hmysql-server) > /dev/null; do
     echo "Waiting for mysql-server..."
     sleep 1
 done
