@@ -14,6 +14,11 @@ docker-compose up mysql-server mongodb-server
 docker-compose run mysql-cli init
 ```
 
+* List records from MongoDB collection (should return no records)
+```
+docker-compose run mongodb-fetcher
+```
+
 * Initialize mysql-consumer, which will read changes from MySQL server
 ```
 docker-compose up mysql-consumer
